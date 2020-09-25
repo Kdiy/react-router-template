@@ -33,22 +33,22 @@ export const routes = [
 ]
 
 
-const explainMaps = []
-const explainRoutes = (routes,parent = {})=>{
-    routes.forEach(item=>{
-        if(typeof item.children !== 'undefined'){
-            explainRoutes(item.children,item)
-        }
-        item.path = parent.path ? parent.path + item.path.replace(parent.path,'') : item.path
-        explainMaps.push(item)
-    })
-    return explainMaps
-}
+
 
 
 const mapRoutes = ()=>{
+    const explainMaps = []
+    const explainRoutes = (routes,parent = {})=>{
+        routes.forEach(item=>{
+            if(typeof item.children !== 'undefined'){
+                explainRoutes(item.children,item)
+            }
+            item.path = parent.path ? parent.path + item.path.replace(parent.path,'') : item.path
+            explainMaps.push(item)
+        })
+        return explainMaps
+    }
     const routeMaps = explainRoutes(routes)
-    console.log(routeMaps)
     return routeMaps.map(item=>{
         const RouteComponent = item.component
         return <Route exact={true} path={item.path} key={item.path} render={(props)=><RouteComponent {...props} />} />
