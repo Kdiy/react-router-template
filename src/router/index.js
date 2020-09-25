@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 export const routes = [
     {
         path: '/',
-        title: '主页',
+        title: 'Home',
         name: '/',
         component: lazy(()=>import('../pages/Home')),
 
@@ -13,13 +13,13 @@ export const routes = [
     {
         path: '/news',
         name: 'news',
-        title: '新闻',
+        title: 'News',
         component: lazy(()=>import('../pages/News/News')),
         children: [
 
             {
                 name: 'news_detail',
-                title: '详情',
+                title: 'Detail',
                 path: '/detail',
                 component: lazy(()=>import('../pages/News/Detail')),
             }
@@ -27,7 +27,7 @@ export const routes = [
     },{
         path: '/contact',
         name: '/contact',
-        title: '联系',
+        title: 'Contact',
         component: lazy(()=>import('../pages/Contact'))
     }
 ]
