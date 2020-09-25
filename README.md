@@ -12,7 +12,7 @@ create-react-app, react-router-dom, layout
 ```
 
 
-### router config
+### Router Config
 ```
 // /src/router/index.js
 
