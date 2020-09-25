@@ -46,3 +46,16 @@ export const routes = [
     }
 ]
 ```
+### Layout
+```
+├─assets
+│  └─img
+├─layout
+│  └─footer.jsx
+│  └─header.jsx
+│  └─index.jsx
+│  └─menu.jsx
+├─pages
+│  └─News
+└─router
+```
